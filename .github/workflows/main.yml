@@ -1,1 +1,21 @@
+on:
+  push:
+    branches:
+     - master
 
+
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+
+    steps:
+     - name: "Testing github actions"
+       run: pwd
+
+
+    - name: "Testing printing actions"
+      run: echo esraa
