@@ -19,4 +19,11 @@ jobs:
 
      - name: "login"
        run: docker login --username ${{ secrets.DOCKER_LARAVEL_USER }} --password ${{ secrets.Docker_Laravel_Password }}
-    
+     
+
+     - name: "Building Docker image"
+       run: docker build -t ${{ secrets.DOCKER_LARAVEL_USER }}/laravel_image .
+     
+     - name: "Pushing to Docker"
+       run: docker push ${{ secrets.DOCKER_LARAVEL_USER }}/laravel_image 
+
